@@ -1,5 +1,4 @@
-# climatecity
-Organising CMPI6 data by city
+# Organising CMPI6 data by city
 
 ## FAQ
 ### Who are you?
