@@ -57,7 +57,7 @@ for ssp in ['ssp585', 'ssp370', 'ssp245', 'ssp126']:
 
 				
 	#https://cds.climate.copernicus.eu/cdsapp#!/dataset/projections-climate-atlas?tab=form	
-	dset = xr.open_dataset("tx_CMIP6_{}_mon_201501-210012.nc".format(ssp) )
+	dset = xr.open_dataset("../tx_CMIP6_{}_mon_201501-210012.nc".format(ssp) )
 	"""
 	<xarray.DataArray 'tx' (member: 27, time: 1032, lat: 180, lon: 360)>
 	[1805587200 values with dtype=float32]
@@ -91,9 +91,11 @@ for ssp in ['ssp585', 'ssp370', 'ssp245', 'ssp126']:
 					ins += ":median_{}_{}, ".format(y, mon)
 					ins += ":percentile_90_{}_{}, ".format(y, mon)
 					ins += ":percentile_10_{}_{}, ".format(y, mon)
-					dummy["median_{}_{}".format(y, mon)] = float(np.median(t))
-					dummy["percentile_90_{}_{}".format(y, mon)] = float(np.percentile(t,90))
-					dummy["percentile_10_{}_{}".format(y, mon)] = float(np.percentile(t,10))
+					
+					med =  float(np.median(t))
+					dummy["median_{}_{}".format(y, mon)] = med
+					dummy["percentile_90_{}_{}".format(y, mon)] = float(np.percentile(t,90)) - med
+					dummy["percentile_10_{}_{}".format(y, mon)] = med - float(np.percentile(t,10))
 			ins += ":lat_id, :lon_id)"
 			dummy["lat_id"] = lat_id
 			dummy["lon_id"] = lon_id
