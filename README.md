@@ -11,7 +11,7 @@ Similar tools exist, like the [IPCC atlas](https://interactive-atlas.ipcc.ch/reg
 ### What is the data?
 The climate predictions are data from CMIP6 which I got from [Copernicus](https://cds.climate.copernicus.eu/cdsapp#!/dataset/projections-climate-atlas?tab=overview). The list of towns and cities comes from [Geonames](https://download.geonames.org/export/dump/cities15000.zip).
 ### What do the numbers mean?
-The big number is the median prediction of a large number of climate models, the little numbers estimate the error. 
+The big number is the a prediction of future temperature, the little numbers estimate the error. More precisely, the estimates are of the monthly mean of daily maximum temperature. The big number is the median (50th percentile) of the CMIP6 model predictions, the errors are estimated from the 10th and 90th percentiles.	
 ### My town isn't on here!
 I used Geonames' list of towns and cities with over 15000 population, it's possible your town is too small. I also use their spelling and naming conventions, so it's possible your town is called something different by Geonames.
 ### What does SSP585/370/245/126 mean?
